@@ -1,0 +1,39 @@
+﻿<Window x:Class="Programm.ViewAdd.AddUser"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Programm.ViewAdd"
+        mc:Ignorable="d"
+        Title="Добавление" Height="500" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="34"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Width="200" Height="30" FontFamily="Arial" FontSize="20" Content="Добавить Пользователя" Grid.Row="0" Grid.Column="1"></Label>
+        <Label HorizontalAlignment="Left" Width="200" Height="30" FontFamily="Arial" FontSize="14" Content="Логин" Grid.Row="1" Grid.Column="1"></Label>
+        <Label HorizontalAlignment="Left" Width="200" Height="30" FontFamily="Arial" FontSize="14" Content="Пароль" Grid.Row="3" Grid.Column="1"></Label>
+        <Label HorizontalAlignment="Left" Width="200" Height="30" FontFamily="Arial" FontSize="14" Content="Должность" Grid.Row="5" Grid.Column="1"></Label>
+        <TextBox x:Name="txb_Login" Width="400" Height="30" FontFamily="Arial" FontSize="14" Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBox x:Name="txb_Password" Width="400" Height="30" FontFamily="Arial" FontSize="14" Grid.Row="4" Grid.Column="1"></TextBox>
+        <TextBox x:Name="txb_Post" Width="400" Height="30" FontFamily="Arial" FontSize="14" Grid.Row="6" Grid.Column="1"></TextBox>
+        <Button Click="Btn_Save" HorizontalAlignment="Left" Grid.Row="8" Grid.Column="1" Width="150" Height="30" FontFamily="Arial" FontSize="14" Content="Добавить" Foreground="White" Background="#4A67F7"></Button>
+        <Button Click="Btn_Can" HorizontalAlignment="Right" Grid.Row="8" Grid.Column="1" Width="150" Height="30" FontFamily="Arial" FontSize="14" Content="Отмена" Foreground="White" Background="#4A67F7"></Button>
+    </Grid>
+</Window>

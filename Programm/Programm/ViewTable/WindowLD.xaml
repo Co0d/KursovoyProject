@@ -1,0 +1,63 @@
+﻿<Window x:Class="Programm.ViewTable.WindowLD"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Programm.ViewTable"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="Подбор, найм и сопровождение трудовых ресурсов" Height="830" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="950"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="600"></RowDefinition>
+            <RowDefinition Height="34"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <StackPanel>
+                <Button Click="Btn_Glav" FontWeight="Bold" FontFamily="Arial" FontSize="14" Height="35" Width="250" Content="Главная" BorderBrush="Transparent" Background="Transparent"></Button>
+                <Button Click="Btn_Empl" FontWeight="Bold" FontFamily="Arial" FontSize="14" Height="35" Width="250" Content="Работники" BorderBrush="Transparent" Background="Transparent"></Button>
+                <Button Click="Btn_LD" FontWeight="Bold" FontFamily="Arial" FontSize="14" Height="35" Width="250" Content="Личное дело" BorderBrush="Transparent" Background="Transparent"></Button>
+                <Button Click="Btn_DE" FontWeight="Bold" FontFamily="Arial" FontSize="14" Height="35" Width="250" Content="Документ об образование" BorderBrush="Transparent" Background="Transparent"></Button>
+                <Button Click="Btn_Pass" FontWeight="Bold" FontFamily="Arial" FontSize="14" Height="35" Width="250" Content="Паспорт" BorderBrush="Transparent" Background="Transparent"></Button>
+                <Button Click="Btn_State" FontWeight="Bold" FontFamily="Arial" FontSize="14" Height="35" Width="250" Content="Ведомость" BorderBrush="Transparent" Background="Transparent"></Button>
+                <Button x:Name="Btn_User1" Click="Btn_User" FontWeight="Bold" FontFamily="Arial" FontSize="14" Height="35" Width="250" Content="Пользователи" BorderBrush="Transparent" Background="Transparent"></Button>
+                <Button Click="Btn_Exit" FontWeight="Bold" FontFamily="Arial" FontSize="14" Height="35" Width="250" Content="Выход" Foreground="White" BorderBrush="Transparent" Background="#0000ff"></Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Button Click="Btn_Add" Margin="0 0 20 0" Width="150" Height="30" FontFamily="Arial" FontSize="14" Content="Добавить" Foreground="White" Background="#4A67F7"></Button>
+                <Button Click="Btn_Edit" Margin="0 0 20 0" Width="150" Height="30" FontFamily="Arial" FontSize="14" Content="Редактировать" Foreground="White" Background="#4A67F7"></Button>
+                <Button Click="Btn_Del" Margin="0 0 20 0" Width="150" Height="30" FontFamily="Arial" FontSize="14" Content="Удалить" Foreground="White" Background="#4A67F7"></Button>
+                <Button Click="Btn_Otchet" Margin="0 0 20 0" Width="150" Height="30" FontFamily="Arial" FontSize="14" Content="Отчет" Foreground="White" Background="#4A67F7"></Button>
+            </StackPanel>
+        </Grid>
+        <DataGrid AutoGenerateColumns="False" x:Name="LDGrid" Grid.Row="1" Grid.Column="1" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Width="*" Binding="{Binding id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding MiddleName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Опыт работы" Width="*" Binding="{Binding WorkExperience}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Образование" Width="*" Binding="{Binding Education}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Профессия" Width="*" Binding="{Binding Profession}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Name="BtnEdit" Click="Btn_Edit"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Width="250" Height="34" Grid.Row="2" Grid.Column="0" Content="Версия 0.0.3" FontSize="14" FontFamily="Arial"></Label>
+    </Grid>
+</Window>
